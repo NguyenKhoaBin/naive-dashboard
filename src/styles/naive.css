@@ -1,0 +1,12 @@
+.n-modal-mask {
+  backdrop-filter: blur(2px);
+}
+
+.v-x-scroll {
+  height: 100%;
+}
+
+.n-qr-code{
+  height: unset !important;
+  width: unset !important;;
+}

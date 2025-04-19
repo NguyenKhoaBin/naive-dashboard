@@ -1,0 +1,42 @@
+/**
+ * Environment type for backend services
+ * - dev: Backend development environment
+ * - test: Backend testing environment
+ * - prod: Backend production environment
+ */
+type ServiceEnvType = 'dev' | 'test' | 'prod'
+
+interface ImportMetaEnv {
+  /** Base URL of the project */
+  readonly VITE_BASE_URL: string
+  /** Project title */
+  readonly VITE_APP_NAME: string
+  /** Enable request proxy */
+  readonly VITE_HTTP_PROXY?: 'Y' | 'N'
+  /** Enable build compression */
+  readonly VITE_BUILD_COMPRESS?: 'Y' | 'N'
+  /** Compression algorithm type */
+  readonly VITE_COMPRESS_TYPE?:
+    | 'gzip'
+    | 'brotliCompress'
+    | 'deflate'
+    | 'deflateRaw'
+  /** Routing mode */
+  readonly VITE_ROUTE_MODE?: 'hash' | 'web'
+  /** Route loading mode */
+  readonly VITE_ROUTE_LOAD_MODE: 'static' | 'dynamic'
+  /** Initial page to load */
+  readonly VITE_HOME_PATH: string
+  /** Copyright information */
+  readonly VITE_COPYRIGHT_INFO: string
+  /** Automatically refresh token */
+  readonly VITE_AUTO_REFRESH_TOKEN: 'Y' | 'N'
+  /** Default language */
+  readonly VITE_DEFAULT_LANG: App.lang
+  /** Backend service environment type */
+  readonly MODE: ServiceEnvType
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv
+}
